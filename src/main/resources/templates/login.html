@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登入页面</title>
+</head>
+<body>
+
+<h1>欢迎来到默认页面</h1>
+<div style="vertical-align:middle">
+    <form method="get" action="${pageContext.request.contextPath }/hello" id="aaa">
+        用户名：<input type="text" id="username" name="username" placeholder="用户名" /><br/>
+        密  码：<input type="password" id="password" name="password" placeholder="密  码" /><br/>
+        <input type="submit" value="登陆"/>
+        <!--<input type="submit" name="submit1" value="登陆" onclick="return check(this.form)">-->
+    </form>
+</div>
+<!--<p th:text="${hello}"></p>-->
+<script type="text/javascript">
+    function check(form) {
+        if(form.username.value=='') {
+            alert("请输入用户帐号!");
+            form.username.focus();
+            return false;
+        }
+        if(form.password.value==''){
+            alert("请输入登录密码!");
+            form.password.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
